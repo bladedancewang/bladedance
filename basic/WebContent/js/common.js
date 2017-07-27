@@ -24,6 +24,15 @@ $.ajaxSetup({
 	cache: false
 });
 
+//权限判断
+function hasPermission(permission) {
+    if (window.parent.permissions.indexOf(permission) > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //重写alert
 window.alert = function(msg, callback){
 	parent.layer.alert(msg, function(index){

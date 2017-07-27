@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.basic.sys.dao.SysMenuDao;
 import com.basic.sys.entity.SysMenuEntity;
 import com.basic.sys.service.SysMenuService;
-import com.basic.sys.service.SysRoleMenuService;
 import com.basic.sys.service.SysUserService;
+import com.basic.sys.utils.Constant;
 import com.basic.sys.utils.Constant.MenuType;
 
 
@@ -22,12 +22,10 @@ public class SysMenuServiceImpl implements SysMenuService {
 	private SysMenuDao sysMenuDao;
 	@Autowired
 	private SysUserService sysUserService;
-	@Autowired
-	private SysRoleMenuService sysRoleMenuService;
 	
 	@Override
 	public List<SysMenuEntity> queryListParentId(Long parentId, List<Long> menuIdList) {
-		List<SysMenuEntity> menuList = sysMenuDao.queryListParentId(parentId);
+		List<SysMenuEntity> menuList = queryListParentId(parentId);
 		if(menuIdList == null){
 			return menuList;
 		}
@@ -42,6 +40,11 @@ public class SysMenuServiceImpl implements SysMenuService {
 	}
 
 	@Override
+	public List<SysMenuEntity> queryListParentId(Long parentId) {
+		return sysMenuDao.queryListParentId(parentId);
+	}
+
+	@Override
 	public List<SysMenuEntity> queryNotButtonList() {
 		return sysMenuDao.queryNotButtonList();
 	}
@@ -49,7 +52,7 @@ public class SysMenuServiceImpl implements SysMenuService {
 	@Override
 	public List<SysMenuEntity> getUserMenuList(Long userId) {
 		//系统管理员，拥有最高权限
-		if(userId == 1){
+		if(userId == Constant.SUPER_ADMIN){
 			return getAllMenuList(null);
 		}
 		

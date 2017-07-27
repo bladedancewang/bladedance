@@ -1,19 +1,25 @@
 package com.basic.sys.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.basic.sys.annotation.SysLog;
 import com.basic.sys.entity.SysMenuEntity;
 import com.basic.sys.service.SysMenuService;
-import com.basic.sys.utils.*;
+import com.basic.sys.utils.Constant;
 import com.basic.sys.utils.Constant.MenuType;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.basic.sys.utils.R;
+import com.basic.sys.utils.RRException;
 
 /**
  * 系统菜单
@@ -33,15 +39,19 @@ public class SysMenuController extends AbstractController {
 	 */
 	@RequestMapping("/list")
 	@RequiresPermissions("sys:menu:list")
-	public R list(@RequestParam Map<String, Object> params){
+	public List<SysMenuEntity> list(@RequestParam Map<String, Object> params){
 		//查询列表数据
-		Query query = new Query(params);
-		List<SysMenuEntity> menuList = sysMenuService.queryList(query);
-		int total = sysMenuService.queryTotal(query);
+//		Query query = new Query(params);
+//		List<SysMenuEntity> menuList = sysMenuService.queryList(query);
+//		int total = sysMenuService.queryTotal(query);
+//		
+//		PageUtils pageUtil = new PageUtils(menuList, total, query.getLimit(), query.getPage());
+//		
+//		return R.ok().put("page", pageUtil);
 		
-		PageUtils pageUtil = new PageUtils(menuList, total, query.getLimit(), query.getPage());
-		
-		return R.ok().put("page", pageUtil);
+		List<SysMenuEntity> menuList = sysMenuService.queryList(new HashMap<>());
+
+		return menuList;
 	}
 	
 	/**
@@ -129,13 +139,18 @@ public class SysMenuController extends AbstractController {
 	@SysLog("删除菜单")
 	@RequestMapping("/delete")
 	@RequiresPermissions("sys:menu:delete")
-	public R delete(@RequestBody Long[] menuIds){
-		for(Long menuId : menuIds){
-			if(menuId.longValue() <= 30){
-				return R.error("系统菜单，不能删除");
-			}
+	public R delete(long menuId){
+		if(menuId <= 30){
+			return R.error("系统菜单，不能删除");
 		}
-		sysMenuService.deleteBatch(menuIds);
+
+		//判断是否有子菜单或按钮
+		List<SysMenuEntity> menuList = sysMenuService.queryListParentId(menuId);
+		if(menuList.size() > 0){
+			return R.error("请先删除子菜单或按钮");
+		}
+
+		sysMenuService.deleteBatch(new Long[]{menuId});
 		
 		return R.ok();
 	}
