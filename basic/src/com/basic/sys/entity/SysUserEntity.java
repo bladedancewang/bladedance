@@ -1,19 +1,21 @@
 package com.basic.sys.entity;
 
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import com.basic.sys.validator.group.AddGroup;
 import com.basic.sys.validator.group.UpdateGroup;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
-
 /**
  * 系统用户
  * 
- * @author 王甲建
+ * @author bladedance
  * @email wjj542@gmail.com
  * @date 2016年9月18日 上午9:28:55
  */
@@ -35,7 +37,12 @@ public class SysUserEntity implements Serializable {
 	 * 密码
 	 */
 	@NotBlank(message="密码不能为空", groups = AddGroup.class)
-	private transient String password;
+	private String password;
+
+	/**
+	 * 盐
+	 */
+	private String salt;
 
 	/**
 	 * 邮箱
@@ -68,6 +75,17 @@ public class SysUserEntity implements Serializable {
 	 * 创建时间
 	 */
 	private Date createTime;
+
+	/**
+	 * 部门ID
+	 */
+	@NotNull(message="部门不能为空", groups = {AddGroup.class, UpdateGroup.class})
+	private Long deptId;
+
+	/**
+	 * 部门名称
+	 */
+	private String deptName;
 
 	/**
 	 * 设置：
@@ -196,5 +214,28 @@ public class SysUserEntity implements Serializable {
 	public void setCreateUserId(Long createUserId) {
 		this.createUserId = createUserId;
 	}
-	
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+
+	public Long getDeptId() {
+		return deptId;
+	}
+
+	public void setDeptId(Long deptId) {
+		this.deptId = deptId;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
 }
