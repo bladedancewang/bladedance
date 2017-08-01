@@ -139,8 +139,8 @@ public class SysMenuController extends AbstractController {
 	@SysLog("删除菜单")
 	@RequestMapping("/delete")
 	@RequiresPermissions("sys:menu:delete")
-	public R delete(long menuId){
-		if(menuId <= 30){
+	public R delete(@RequestBody Long menuId){
+		if(menuId.longValue() <= 30){
 			return R.error("系统菜单，不能删除");
 		}
 

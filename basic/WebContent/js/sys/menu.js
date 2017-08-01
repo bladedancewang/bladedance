@@ -28,7 +28,7 @@ var vm = new Vue({
     methods: {
         getMenu: function(){
             //加载菜单树
-            $.get("menu/select", function(r){
+            $.get("../sys/menu/select", function(r){
                 ztree = $.fn.zTree.init($("#menuTree"), setting, r.menuList);
                 var node = ztree.getNodeByParam("menuId", vm.menu.parentId);
                 ztree.selectNode(node);
@@ -48,7 +48,7 @@ var vm = new Vue({
                 return ;
             }
 
-            $.get("menu/info/"+menuId, function(r){
+            $.get("../sys/menu/info/"+menuId, function(r){
                 vm.showList = false;
                 vm.title = "修改";
                 vm.menu = r.menu;
@@ -64,8 +64,8 @@ var vm = new Vue({
             confirm('确定要删除选中的记录？', function(){
                 $.ajax({
                     type: "POST",
-                    url: "menu/delete",
-                    data: "menuId=" + menuId,
+                    url: "../sys/menu/delete",
+                    data: menuId,
                     success: function(r){
                         if(r.code === 0){
                             alert('操作成功', function(){
@@ -79,7 +79,7 @@ var vm = new Vue({
             });
         },
         saveOrUpdate: function (event) {
-            var url = vm.menu.menuId == null ? "menu/save" : "menu/update";
+            var url = vm.menu.menuId == null ? "../sys/menu/save" : "../sys/menu/update";
             $.ajax({
                 type: "POST",
                 url: url,
@@ -174,7 +174,7 @@ function getMenuId () {
 
 $(function () {
     var colunms = Menu.initColumn();
-    var table = new TreeTable(Menu.id,  "menu/list", colunms);
+    var table = new TreeTable(Menu.id,  "../sys/menu/list", colunms);
     table.setExpandColumn(2);
     table.setIdField("menuId");
     table.setCodeField("menuId");
