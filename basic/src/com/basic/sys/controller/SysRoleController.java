@@ -1,11 +1,20 @@
 package com.basic.sys.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.basic.sys.annotation.SysLog;
 import com.basic.sys.entity.SysRoleEntity;
+import com.basic.sys.service.SysRoleDeptService;
 import com.basic.sys.service.SysRoleMenuService;
 import com.basic.sys.service.SysRoleService;
 import com.basic.sys.utils.Constant;
@@ -13,10 +22,6 @@ import com.basic.sys.utils.PageUtils;
 import com.basic.sys.utils.Query;
 import com.basic.sys.utils.R;
 import com.basic.sys.validator.ValidatorUtils;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 角色管理
@@ -32,6 +37,8 @@ public class SysRoleController extends AbstractController {
 	private SysRoleService sysRoleService;
 	@Autowired
 	private SysRoleMenuService sysRoleMenuService;
+	@Autowired
+	private SysRoleDeptService sysRoleDeptService;
 	
 	/**
 	 * 角色列表
@@ -83,6 +90,10 @@ public class SysRoleController extends AbstractController {
 		List<Long> menuIdList = sysRoleMenuService.queryMenuIdList(roleId);
 		role.setMenuIdList(menuIdList);
 		
+		//查询角色对应的部门
+		List<Long> deptIdList = sysRoleDeptService.queryDeptIdList(roleId);
+		role.setDeptIdList(deptIdList);
+				
 		return R.ok().put("role", role);
 	}
 	

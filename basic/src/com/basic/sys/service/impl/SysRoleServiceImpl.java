@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.basic.sys.dao.SysRoleDao;
 import com.basic.sys.entity.SysRoleEntity;
+import com.basic.sys.service.SysRoleDeptService;
 import com.basic.sys.service.SysRoleMenuService;
 import com.basic.sys.service.SysRoleService;
 import com.basic.sys.service.SysUserRoleService;
@@ -34,6 +35,8 @@ public class SysRoleServiceImpl implements SysRoleService {
 	private SysRoleMenuService sysRoleMenuService;
 	@Autowired
 	private SysUserRoleService sysUserRoleService;
+	@Autowired
+	private SysRoleDeptService sysRoleDeptService;
 	@Autowired
 	private SysUserService sysUserService;
 
@@ -63,6 +66,9 @@ public class SysRoleServiceImpl implements SysRoleService {
 		
 		//保存角色与菜单关系
 		sysRoleMenuService.saveOrUpdate(role.getRoleId(), role.getMenuIdList());
+		
+		//保存角色与部门关系
+		sysRoleDeptService.saveOrUpdate(role.getRoleId(), role.getDeptIdList());
 	}
 
 	@Override
@@ -75,6 +81,9 @@ public class SysRoleServiceImpl implements SysRoleService {
 		
 		//更新角色与菜单关系
 		sysRoleMenuService.saveOrUpdate(role.getRoleId(), role.getMenuIdList());
+		
+		//保存角色与部门关系
+		sysRoleDeptService.saveOrUpdate(role.getRoleId(), role.getDeptIdList());
 	}
 
 	@Override
