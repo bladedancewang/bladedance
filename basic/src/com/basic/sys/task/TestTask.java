@@ -1,13 +1,6 @@
 package com.basic.sys.task;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.basic.sys.entity.SysUserEntity;
-import com.basic.sys.service.SysUserService;
 
 /**
  * 测试定时任务(演示Demo，可删除)
@@ -19,28 +12,15 @@ import com.basic.sys.service.SysUserService;
  * @date 2017年6月30日 下午1:34:24
  */
 @Component("testTask")
-public class TestTask {
-	private Logger logger = LoggerFactory.getLogger(getClass());
+public class TestTask extends BaseTask {
 	
-	@Autowired
-	private SysUserService sysUserService;
 	
 	public void test(String params){
-		logger.info("我是带参数的test方法，正在被执行，参数为：" + params);
+		logger.info("演示用定时任务");
+		logger.info("key1" + getValue(params,"key1"));
+		logger.info("key2" + getValue(params,"key2"));
+		logger.info("key3" + getValue(params,"key3"));
+		logger.info("key4" + getValue(params,"key4"));
 		
-		try {
-			Thread.sleep(1000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
-		SysUserEntity user = sysUserService.queryObject(1L);
-		System.out.println(ToStringBuilder.reflectionToString(user));
-		
-	}
-	
-	
-	public void test2(){
-		logger.info("我是不带参数的test2方法，正在被执行");
 	}
 }
