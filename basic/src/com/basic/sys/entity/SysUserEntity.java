@@ -17,7 +17,7 @@ import com.basic.sys.validator.group.UpdateGroup;
  * 
  * @author bladedance
  * @email bladedance@vip.qq.com
- * @date 2016年9月18日 上午9:28:55
+ * @date 2017年7月18日 上午9:28:55
  */
 public class SysUserEntity implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  * @author bladedance
  * @email bladedance@vip.qq.com
- * @date 2016年9月18日 上午9:28:39
+ * @date 2017年7月18日 上午9:28:39
  */
 public class SysUserRoleEntity implements Serializable {
 	private static final long serialVersionUID = 1L;

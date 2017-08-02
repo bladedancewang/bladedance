@@ -9,7 +9,7 @@ import com.basic.sys.entity.SysMenuEntity;
  * 
  * @author bladedance
  * @email bladedance@vip.qq.com
- * @date 2016年9月18日 上午9:33:01
+ * @date 2017年7月18日 上午9:33:01
  */
 public interface SysMenuDao extends BaseDao<SysMenuEntity> {
 	
