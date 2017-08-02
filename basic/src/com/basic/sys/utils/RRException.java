@@ -3,8 +3,8 @@ package com.basic.sys.utils;
 /**
  * 自定义异常
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月27日 下午10:11:27
  */
 public class RRException extends RuntimeException {

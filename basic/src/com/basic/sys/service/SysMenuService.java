@@ -9,8 +9,8 @@ import com.basic.sys.entity.SysMenuEntity;
 /**
  * 菜单管理
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:42:16
  */
 public interface SysMenuService {

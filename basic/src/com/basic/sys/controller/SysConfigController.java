@@ -18,8 +18,8 @@ import java.util.Map;
 /**
  * 系统配置信息
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月4日 下午6:55:53
  */
 @RestController

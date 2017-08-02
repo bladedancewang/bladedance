@@ -16,7 +16,7 @@ import com.basic.sys.validator.group.UpdateGroup;
  * 系统用户
  * 
  * @author bladedance
- * @email wjj542@gmail.com
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:28:55
  */
 public class SysUserEntity implements Serializable {

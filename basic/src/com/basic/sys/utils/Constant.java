@@ -3,8 +3,8 @@ package com.basic.sys.utils;
 /**
  * 常量
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月15日 下午1:23:52
  */
 public class Constant {
@@ -14,8 +14,8 @@ public class Constant {
 	/**
 	 * 菜单类型
 	 * 
-	 * @author 王甲建
-	 * @email wjj542@gmail.com
+	 * @author bladedance
+	 * @email bladedance@vip.qq.com
 	 * @date 2017年6月15日 下午1:24:29
 	 */
     public enum MenuType {
@@ -46,8 +46,8 @@ public class Constant {
     /**
      * 定时任务状态
      * 
-     * @author 王甲建
-     * @email wjj542@gmail.com
+     * @author bladedance
+     * @email bladedance@vip.qq.com
      * @date 2017年6月3日 上午12:07:22
      */
     public enum ScheduleStatus {

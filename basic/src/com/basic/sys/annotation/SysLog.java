@@ -9,8 +9,8 @@ import java.lang.annotation.Target;
 /**
  * 系统日志注解
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月8日 上午10:19:56
  */
 @Target(ElementType.METHOD)

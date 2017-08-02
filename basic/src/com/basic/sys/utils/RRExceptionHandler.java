@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 异常处理器
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月27日 下午10:16:19
  */
 @Component

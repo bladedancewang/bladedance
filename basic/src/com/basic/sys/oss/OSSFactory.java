@@ -7,8 +7,8 @@ import com.basic.sys.utils.SpringContextUtils;
 
 /**
  * 文件上传Factory
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-26 10:18
  */
 public final class OSSFactory {

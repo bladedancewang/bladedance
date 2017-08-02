@@ -13,8 +13,8 @@ import java.util.Set;
  *
  * 参考文档：http://docs.jboss.org/hibernate/validator/5.4/reference/en-US/html_single/
  *
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-15 10:50
  */
 public class ValidatorUtils {

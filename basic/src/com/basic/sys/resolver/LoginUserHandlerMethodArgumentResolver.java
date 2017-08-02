@@ -14,8 +14,8 @@ import com.basic.sys.service.UserService;
 
 /**
  * 有@LoginUser注解的方法参数，注入当前登录用户
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-23 22:02
  */
 public class LoginUserHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {

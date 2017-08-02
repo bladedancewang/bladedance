@@ -2,8 +2,8 @@ package com.basic.sys.utils;
 
 /**
  * 系统参数相关Key
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-26 10:33
  */
 public class ConfigConstant {

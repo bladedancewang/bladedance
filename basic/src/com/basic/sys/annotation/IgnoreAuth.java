@@ -4,8 +4,8 @@ import java.lang.annotation.*;
 
 /**
  * 忽略Token验证
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-23 15:44
  */
 @Target(ElementType.METHOD)

@@ -17,7 +17,7 @@ import com.basic.sys.service.SysRoleMenuService;
  * 角色与菜单对应关系
  * 
  * @author bladedance
- * @email wjj542@gmail.com
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:44:35
  */
 @Service("sysRoleMenuService")

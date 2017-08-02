@@ -12,8 +12,8 @@ import com.basic.sys.utils.R;
 /**
  * API测试接口
  *
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-23 15:47
  */
 @RestController

@@ -9,8 +9,8 @@ import com.basic.sys.entity.SysUserEntity;
 /**
  * 系统用户
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:43:39
  */
 public interface SysUserService {

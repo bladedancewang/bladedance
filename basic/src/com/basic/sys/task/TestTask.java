@@ -14,8 +14,8 @@ import com.basic.sys.service.SysUserService;
  * 
  * testTask为spring bean的名称
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月30日 下午1:34:24
  */
 @Component("testTask")

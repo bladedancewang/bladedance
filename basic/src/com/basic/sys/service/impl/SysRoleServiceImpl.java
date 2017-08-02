@@ -23,7 +23,7 @@ import com.basic.sys.utils.RRException;
  * 角色
  * 
  * @author bladedance
- * @email wjj542@gmail.com
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:45:12
  */
 @Service("sysRoleService")

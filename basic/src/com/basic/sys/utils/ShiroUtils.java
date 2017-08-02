@@ -9,8 +9,8 @@ import com.basic.sys.entity.SysUserEntity;
 /**
  * Shiro工具类
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月12日 上午9:49:19
  */
 public class ShiroUtils {

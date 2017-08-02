@@ -9,8 +9,8 @@ import com.basic.sys.utils.ShiroUtils;
 /**
  * Controller公共组件
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月9日 下午9:42:26
  */
 public abstract class AbstractController {

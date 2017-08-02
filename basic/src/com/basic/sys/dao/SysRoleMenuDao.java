@@ -7,8 +7,8 @@ import com.basic.sys.entity.SysRoleMenuEntity;
 /**
  * 角色与菜单对应关系
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:33:46
  */
 public interface SysRoleMenuDao extends BaseDao<SysRoleMenuEntity> {

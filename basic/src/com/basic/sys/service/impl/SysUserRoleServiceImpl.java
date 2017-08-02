@@ -16,7 +16,7 @@ import com.basic.sys.service.SysUserRoleService;
  * 用户与角色对应关系
  * 
  * @author bladedance
- * @email wjj542@gmail.com
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:45:48
  */
 @Service("sysUserRoleService")

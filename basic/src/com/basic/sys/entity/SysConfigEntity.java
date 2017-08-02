@@ -6,8 +6,8 @@ import org.hibernate.validator.constraints.NotBlank;
 /**
  * 系统配置信息
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月4日 下午6:43:36
  */
 public class SysConfigEntity {

@@ -8,8 +8,8 @@ import com.basic.sys.xss.SQLFilter;
 /**
  * 查询参数
  *
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017-06-14 23:15
  */
 public class Query extends LinkedHashMap<String, Object> {

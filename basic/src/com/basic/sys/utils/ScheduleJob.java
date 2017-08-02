@@ -20,8 +20,8 @@ import com.basic.sys.service.ScheduleJobLogService;
 /**
  * 定时任务
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月30日 下午12:44:21
  */
 public class ScheduleJob extends QuartzJobBean {

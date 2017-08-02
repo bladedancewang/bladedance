@@ -21,7 +21,7 @@ import com.basic.sys.utils.R;
  * 部门管理
  * 
  * @author bladedance
- * @email wjj542@gmail.com
+ * @email bladedance@vip.qq.com
  * @date 2017-06-20 15:23:47
  */
 @RestController

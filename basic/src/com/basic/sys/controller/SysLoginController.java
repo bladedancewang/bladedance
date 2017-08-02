@@ -29,8 +29,8 @@ import com.google.code.kaptcha.Producer;
 /**
  * 登录相关
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2017年6月10日 下午1:15:31
  */
 @Controller

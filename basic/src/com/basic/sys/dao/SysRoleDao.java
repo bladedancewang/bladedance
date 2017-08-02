@@ -7,8 +7,8 @@ import com.basic.sys.entity.SysRoleEntity;
 /**
  * 角色管理
  * 
- * @author 王甲建
- * @email wjj542@gmail.com
+ * @author bladedance
+ * @email bladedance@vip.qq.com
  * @date 2016年9月18日 上午9:33:33
  */
 public interface SysRoleDao extends BaseDao<SysRoleEntity> {
