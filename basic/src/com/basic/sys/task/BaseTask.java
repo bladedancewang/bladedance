@@ -14,11 +14,17 @@ public class BaseTask {
 	Logger logger = LoggerFactory.getLogger(getClass());
 
 
+	JSONObject parseJSONObject(String jsonParams){
+		if(jsonParams==null||jsonParams.equals("")){
+			return null;
+		}
+		return JSON.parseObject(jsonParams);
+	}
+	
 	/**
 	 * 根据键值获取定时任务json格式参数的中value
 	 * */
-	String getValue(String jsonParams,String jsonKey) {
-		JSONObject json = JSON.parseObject(jsonParams);
+	String getValue(JSONObject json,String jsonKey) {
 		String jsonValue = null;
 		if (json != null) {
 			if (json.get(jsonKey) != null) {

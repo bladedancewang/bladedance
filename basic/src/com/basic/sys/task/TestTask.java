@@ -2,6 +2,8 @@ package com.basic.sys.task;
 
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 测试定时任务(演示Demo，可删除)
  * 
@@ -17,10 +19,11 @@ public class TestTask extends BaseTask {
 	
 	public void test(String params){
 		logger.info("演示用定时任务");
-		logger.info("key1" + getValue(params,"key1"));
-		logger.info("key2" + getValue(params,"key2"));
-		logger.info("key3" + getValue(params,"key3"));
-		logger.info("key4" + getValue(params,"key4"));
+		JSONObject json =parseJSONObject(params);
+		logger.info("key1" + getValue(json,"key1"));
+		logger.info("key2" + getValue(json,"key2"));
+		logger.info("key3" + getValue(json,"key3"));
+		logger.info("key4" + getValue(json,"key4"));
 		
 	}
 }
