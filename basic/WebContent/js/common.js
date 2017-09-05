@@ -82,3 +82,76 @@ function getSelectedRows() {
     
     return grid.getGridParam("selarrrow");
 }
+
+var searchInList = function(list, compareKey, compareValue, returnKey) {
+	for (var i = 0; i < list.length; i++) {
+		if (list[i][compareKey] == compareValue)
+			return list[i][returnKey] ? list[i][returnKey] : '';
+	}
+	return '';
+};
+
+var searchItem = function(list, compareKey, compareValue) {
+	for (var i = 0; i < list.length; i++) {
+		if (list[i][compareKey] == compareValue)
+			return list[i];
+	}
+	return null;
+};
+
+jQuery.fn.extend({
+	/**
+	 *
+	/**
+	 * 有特殊需求实现自己的插件, 返回注释处理在sourceResolver里写,
+	 * labelFormatter是格式化显示label和value的处理,
+	 * callBack是选中下拉选项后的选项回调 
+	 */
+	_autoList : function(options) {
+		var el = this;
+		var defaults = {
+			key : 'key',
+			enterActive : false,
+			dataType : 'json',
+			paramsMethod : function(el) {
+				return {};
+			},
+			data : {
+				page : 1,
+				limit : 10
+			},
+			sourceResolver : function(data) {
+				return data;
+			},
+			labelFormatter : function(item) {
+				return item;
+			},
+			callBack : function(event, ui, el) {
+				
+			}
+		};
+		var _options = jQuery.extend(true, defaults, options);
+		this.autocomplete({
+			enterActive : _options['enterActive'],
+			source : function(request, response) {
+				var params = _options.paramsMethod(el);
+				params[_options['key']] = request.term;
+				jQuery.ajax({
+					url : _options['url'],
+					dataType : _options['dataType'],
+					data : jQuery.extend(true, _options['data'], params),
+					success : function(data) {
+						response($.map(_options['sourceResolver'](data), function(item) {
+							// 返回  [{label : '', value : 11}]
+							return _options['labelFormatter'](item);
+						}));
+					}
+				});
+			},
+			select : function(event, ui) {
+				_options['callBack'](event, ui, el);
+			}
+		});
+		return this;
+	}	
+});
